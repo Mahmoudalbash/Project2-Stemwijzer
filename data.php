@@ -15,7 +15,6 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);  // Maak de PDO-instantie
     // Dit bericht wordt weergegeven als de verbinding succesvol is
-    echo "Verbinding succesvol!";
 } catch (\PDOException $e) {
     // Toon een foutmelding als de verbinding mislukt
     echo "Verbindingsfout: " . $e->getMessage();
