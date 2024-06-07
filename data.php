@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';  // De hostname van de MySQL-server
+$host = '127.0.0.1';  // De hostname van de MySQL-server
 $db   = 'Project2';   // De naam van de database
 $user = 'root';       // De gebruikersnaam voor de database
 $pass = '';           // Het wachtwoord voor de database
@@ -14,8 +14,14 @@ $options = [
 
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);  // Maak de PDO-instantie
+    // Dit bericht wordt weergegeven als de verbinding succesvol is
     echo "Verbinding succesvol!";
 } catch (\PDOException $e) {
-    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    // Toon een foutmelding als de verbinding mislukt
+    echo "Verbindingsfout: " . $e->getMessage();
+    exit;
 }
+
+$stmt = $pdo->query('SELECT * FROM partijen');
+$partijen = $stmt->fetchAll();
 ?>
