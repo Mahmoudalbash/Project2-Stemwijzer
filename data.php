@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';  // De hostname van de MySQL-server
+$host = '127.0.0.1';  // De hostname van de MySQL-server
 $db   = 'Project2';   // De naam van de database
 $user = 'root';       // De gebruikersnaam voor de database
 $pass = '';           // Het wachtwoord voor de database
