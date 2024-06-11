@@ -4,10 +4,8 @@ body {
     padding: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    position: relative;
+    z-index: 1; /* Ensure body content is above the top-banner */
 }
 
 :root {
@@ -24,55 +22,113 @@ body.dark-mode {
     --header-link-color: #edf2f4;
 }
 
-.container {
-    text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-.question {
-    margin-bottom: 20px;
-}
-
-.options {
+.top-banner {
     display: flex;
-    flex-direction: column;
+    background-color: #edf2f4;
     align-items: center;
-    gap: 20px;
+    height: 100px;
+    position: relative;
+    z-index: 0; /* Ensure top-banner is below the body content */
 }
 
-.option {
-    display: inline-block;
-    width: 100%;
-    padding: 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
+.logo-container {
+    overflow: hidden;
+    height: 80px; /* Adjust height to crop top and bottom */
+    margin: 10px 0; /* Centers the cropped logo within the banner */
+}
+
+.logo-left {
+     /* Original height of the logo */
+    width: auto;
+    transform: translateY(-5px); /* Moves the logo up a bit to crop */
+}
+
+header {
+    background-color: var(--header-bg-color);
+    padding: 10px 0;
     text-align: center;
+    position: relative;
+    z-index: 9999; /* Ensures header is above everything else */
 }
 
-.option.eens {
-    background-color: green;
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.option.oneens {
-    background-color: red;
+header nav a {
+    color: var(--header-link-color);
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-.option.weetniet {
-    background-color: grey;
+header nav a:hover {
+    text-decoration: underline;
 }
 
-#submit-section {
-    margin-top: 20px;
+/* Toggle Switch CSS */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 15px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.content {
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Ensure content is above the top-banner */
+}
+
+section {
+    position: relative;
+    z-index: 1; /* Ensure sections are above the top-banner */
 }

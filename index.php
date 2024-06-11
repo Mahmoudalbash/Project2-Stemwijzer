@@ -22,8 +22,8 @@ $vragen = $stemwijzer->selectAll();
         <nav>
             <a href="Start.html">Start</a>
             <a href="Nieuws.html">Nieuws</a>
-            <a href="index.php">Stellingen</a>
-            <a href="Over_partijen.php">Over de partijen</a>
+            <a href="Stellingen.html">Stellingen</a>
+            <a href="index.php">Over de partijen</a>
             <a href="Over_ons.html">Over ons</a>
             <a href="Opties.html">Opties</a>
             <a href="Account.html">Account</a>
@@ -60,17 +60,22 @@ $vragen = $stemwijzer->selectAll();
 
     <script>
         function showNextQuestion(currentIndex) {
-            const currentQuestion = document.getElementById('question_' + currentIndex);
-            const nextQuestion = document.getElementById('question_' + (currentIndex + 1));
-            
-            if (nextQuestion) {
-                currentQuestion.style.display = 'none';
-                nextQuestion.style.display = 'block';
-            } else {
-                currentQuestion.style.display = 'none';
-                document.getElementById('submit-section').style.display = 'block';
-            }
-        }
+    console.log('Current Index:', currentIndex);
+
+    const currentQuestion = document.getElementById('question_' + currentIndex);
+    console.log('Current Question:', currentQuestion);
+
+    const nextQuestion = document.getElementById('question_' + (currentIndex + 1));
+    console.log('Next Question:', nextQuestion);
+
+    if (nextQuestion) {
+        currentQuestion.style.display = 'none';
+        nextQuestion.style.display = 'block';
+    } else {
+        currentQuestion.style.display = 'none';
+        document.getElementById('submit-section').style.display = 'block';
+    }
+}
     </script>
 </body>
 </html>
