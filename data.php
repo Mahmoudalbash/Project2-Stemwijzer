@@ -21,6 +21,16 @@ try {
     exit;
 }
 
-$stmt = $pdo->query('SELECT * FROM partijen');
-$partijen = $stmt->fetchAll();
+class Stemwijzer {
+    private $pdo;
+
+    public function __construct($pdo) {
+        $this->pdo = $pdo;
+    }
+
+    public function selectAll() {
+        $stmt = $this->pdo->query('SELECT * FROM vragen');
+        return $stmt->fetchAll();
+    }
+}
 ?>
