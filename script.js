@@ -19,3 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
     });
 });
+function showNextQuestion(currentIndex) {
+    const currentQuestion = document.getElementById('question_' + currentIndex);
+    const nextQuestion = document.getElementById('question_' + (currentIndex + 1));
+    
+    if (nextQuestion) {
+        currentQuestion.style.display = 'none';
+        nextQuestion.style.display = 'block';
+    } else {
+        currentQuestion.style.display = 'none';
+        document.getElementById('submit-section').style.display = 'block';
+    }
+}
