@@ -132,3 +132,36 @@ section {
     position: relative;
     z-index: 1; /* Ensure sections are above the top-banner */
 }
+
+.question {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.option_eens {
+    display: block;
+    width: 200px; /* Adjust width as needed */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+.option input {
+    margin-right: 5px;
+}
