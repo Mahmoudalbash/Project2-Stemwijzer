@@ -47,7 +47,7 @@ $beste_partij = key($scores);
     <div class="container">
         <h1>Uw Resultaat</h1>
         <p>De partij die het beste bij u past is: <strong><?php echo $beste_partij; ?></strong></p>
-        <a href="index.php">Terug naar de vragen</a>
+        <a href="Start.html">Terug naar de vragen</a>
     </div>
 </body>
 </html>

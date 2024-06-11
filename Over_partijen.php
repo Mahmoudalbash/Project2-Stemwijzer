@@ -17,8 +17,8 @@
         <nav>
             <a href="Start.html">Start</a>
             <a href="Nieuws.html">Nieuws</a>
-            <a href="Stellingen.html">Stellingen</a>
-            <a href="index.php">Over de partijen</a>
+            <a href="index.php">Stellingen</a>
+            <a href="Over_partijen.php">Over de partijen</a>
             <a href="Over_ons.html">Over ons</a>
             <a href="Opties.html">Opties</a>
             <a href="Account.html">Account</a>

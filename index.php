@@ -15,24 +15,6 @@ $vragen = $stemwijzer->selectAll();
     <script defer src="script.js"></script>
 </head>
 <body>
-<div class="top-banner">
-        <img src="images/logo-met-text-rechts.svg" alt="Logo met text rechts" class="logo-left">
-    </div>
-    <header>
-        <nav>
-            <a href="Start.html">Start</a>
-            <a href="Nieuws.html">Nieuws</a>
-            <a href="Stellingen.html">Stellingen</a>
-            <a href="index.php">Over de partijen</a>
-            <a href="Over_ons.html">Over ons</a>
-            <a href="Opties.html">Opties</a>
-            <a href="Account.html">Account</a>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider round"></span>
-            </label>
-        </nav>
-    </header>
     <div class="container">
         <h1>Stelling</h1>
         <form action="result.php" method="post" id="stemwijzer-form">
