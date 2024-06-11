@@ -33,4 +33,6 @@ class Stemwijzer {
         return $stmt->fetchAll();
     }
 }
+$stmt = $pdo->query('SELECT * FROM partijen');
+$partijen = $stmt->fetchAll();
 ?>
