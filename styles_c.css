@@ -25,10 +25,16 @@ body.dark-mode {
 
 /* Logo Styles */
 .logo-left {
-    height: 112px;
-    background: #edf2f4;
-    clip-path: inset(200px 20px 200px 40px);
+    height: 350px;
+    clip-path: inset(220px 0px 220px 0px);
     width: auto;
+    transform: translateY(-125px);
+}
+
+.top-banner {
+    background-color: #edf2f4;
+    height: 100px;
+ /* Adjust this value to shift to the right */
 }
 
 header {
@@ -55,6 +61,7 @@ header nav a {
 header nav a:hover {
     text-decoration: underline;
 }
+
 .switch {
     position: relative;
     display: inline-block;
@@ -129,6 +136,7 @@ input:checked + .slider:before {
     font-size: 20px;
     margin-bottom: 10px;
 }
+
 .options {
     display: flex;
     justify-content: center;
@@ -172,4 +180,46 @@ input[type="submit"] {
     cursor: pointer;
     display: block;
     margin: 0 auto; /* This centers the button horizontally */
+}
+
+/* Navigation Blocks */
+.navigation-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.block {
+    background-color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+}
+
+.block h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.block p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.block button {
+    background-color: var(--header-bg-color);
+    color: var(--header-link-color);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.block button:hover {
+    background-color: var(--header-link-color);
+    color: var(--header-bg-color);
 }
