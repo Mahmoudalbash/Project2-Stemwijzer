@@ -53,7 +53,7 @@ $beste_partij = key($scores);
         <nav>
             <a href="Start.html">Start</a>
             <a href="Nieuws.html">Nieuws</a>
-            <a href="index.php">Stellingen</a>
+            <a href="stemwijzer.php">Stellingen</a>
             <a href="Over_partijen.php">Over de partijen</a>
             <a href="Over_ons.html">Over ons</a>
             <a href="Opties.html">Opties</a>
