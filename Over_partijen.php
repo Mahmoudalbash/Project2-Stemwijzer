@@ -1,5 +1,10 @@
 <?php include 'data.php'; ?>
 
+<?php
+$stemwijzer = new Stemwijzer($pdo);
+$partijen = $stemwijzer->selectAllParties();
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>

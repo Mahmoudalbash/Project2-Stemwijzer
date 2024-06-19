@@ -51,6 +51,11 @@ class Stemwijzer {
         $stmt->execute(['id' => $id]);
         return $stmt->fetch();
     }
+
+    public function selectAllParties() {
+        $stmt = $this->pdo->query('SELECT * FROM partijen');
+        return $stmt->fetchAll();
+    }
 }
 
 
