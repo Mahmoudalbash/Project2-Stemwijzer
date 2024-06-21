@@ -115,7 +115,19 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+
 @media (max-width: 768px) {
+
+    .Ons_txt {
+        width: 95%;
+        padding: 10px;
+    }
+
+    header nav a {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+
     .container {
         width: 100%;
         padding: 10px;
@@ -260,4 +272,10 @@ input[type="submit"] {
 .block button:hover {
     background-color: var(--header-link-color);
     color: var(--header-bg-color);
+}
+
+.Ons_txt {
+    width: 60%;
+    margin: 30px auto 20px; /* Adjusted margin to move it down and provide bottom margin */
+    margin-left: 40px;
 }
