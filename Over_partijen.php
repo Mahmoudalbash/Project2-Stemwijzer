@@ -5,6 +5,11 @@ $stemwijzer = new Stemwijzer();
 $partijen = $stemwijzer->selectAllParties();
 ?>
 
+<?php
+$stemwijzer = new Stemwijzer($pdo);
+$partijen = $stemwijzer->selectAllParties();
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
