@@ -1,17 +1,14 @@
 <?php
-include 'data.php';
+include 'config.php';
 
-$stemwijzer = new Stemwijzer($pdo);
-
-if (!isset($_GET['id'])) {
-    header("Location: read.php");
-    exit();
-}
+$stemwijzer = new Stemwijzer();
 
 $id = $_GET['id'];
-$stemwijzer->deleteVraag($id);
-header("Location: read.php");
+$stemwijzer->deletePartij($id);
+
+header("Location: crud.php");
 exit();
 ?>
+
 
 

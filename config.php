@@ -2,7 +2,7 @@
 
 class Stemwijzer
 {
-    private $conn = "mysql:host=localhost;dbname=project2";
+    private $conn = "mysql:host=localhost;dbname=stemwijzer";
     private $user = "root";
     private $pass = "";
     private $pdo;
@@ -21,11 +21,47 @@ class Stemwijzer
     {
         $stmt = $this->pdo->prepare("SELECT * FROM vragen;");
         $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Add other CRUD methods here as needed
+    public function selectAllPartijen()
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM politieke_partijen;");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function selectPartijById($id)
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM politieke_partijen WHERE id = :id;");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function addPartij($naam, $standpunten)
+    {
+        $stmt = $this->pdo->prepare("INSERT INTO politieke_partijen (naam, standpunten) VALUES (:naam, :standpunten);");
+        $stmt->bindParam(':naam', $naam);
+        $stmt->bindParam(':standpunten', $standpunten);
+        $stmt->execute();
+    }
+
+    public function updatePartij($id, $naam, $standpunten)
+    {
+        $stmt = $this->pdo->prepare("UPDATE politieke_partijen SET naam = :naam, standpunten = :standpunten WHERE id = :id;");
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':naam', $naam);
+        $stmt->bindParam(':standpunten', $standpunten);
+        $stmt->execute();
+    }
+
+    public function deletePartij($id)
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM politieke_partijen WHERE id = :id;");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 }
 
 ?>

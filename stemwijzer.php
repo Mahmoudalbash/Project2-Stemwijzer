@@ -12,6 +12,7 @@ $vragen = $stemwijzer->selectAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stemwijzer</title>
     <link rel="stylesheet" href="styles_c.css">
+    <script defer src="script.js"></script>
 </head>
 <header>
         <nav>
