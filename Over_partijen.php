@@ -6,7 +6,7 @@ $partijen = $stemwijzer->selectAllParties();
 ?>
 
 <?php
-$stemwijzer = new Stemwijzer($pdo);
+$stemwijzer = new Stemwijzer();
 $partijen = $stemwijzer->selectAllParties();
 ?>
 
