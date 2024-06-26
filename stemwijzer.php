@@ -11,10 +11,18 @@ $vragen = $stemwijzer->selectAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stemwijzer</title>
-    <link rel="stylesheet" href="styles_c.css">
+    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
-<header>
+
+
+
+
+<body>
+    <div class="top-banner">
+        <img src="images/logo-met-text-rechts.svg" alt="Logo met text rechts" class="logo-left">
+    </div>
+    <header>
         <nav>
             <a href="Start.html">Start</a>
             <a href="Nieuws.html">Nieuws</a>
@@ -29,10 +37,6 @@ $vragen = $stemwijzer->selectAll();
             </label>
         </nav>
     </header>
-
-
-
-<body>
     <div class="container">
         <h1>Stelling</h1>
         <form action="result.php" method="post" id="stemwijzer-form">

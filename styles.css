@@ -25,12 +25,18 @@ body.dark-mode {
 
 /* Logo Styles */
 .logo-left {
+    height: 350px;
+    background: #edf2f4;
+    clip-path: inset(220px 0px 220px 0px);
     width: auto;
-    transform: translateY(-5px); /* Moves the logo up a bit */
-    overflow: hidden;
+    transform: translateY(-125px);
 }
 
-/* Header Styles */
+.top-banner {
+    background-color: #edf2f4;
+    height: 100px;
+}
+
 header {
     background-color: var(--header-bg-color);
     padding: 10px 0;
@@ -56,7 +62,6 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* Toggle Switch Styles */
 .switch {
     position: relative;
     display: inline-block;
@@ -110,23 +115,19 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/* Content Container */
-.content {
-    padding: 20px;
-    position: relative;
-    z-index: 1; /* Ensure content is above the top-banner */
-}
-
-/* Main Container */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
 @media (max-width: 768px) {
+
+    .Ons_txt {
+        width: 95%;
+        padding: 10px;
+    }
+
+    header nav a {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+
     .container {
         width: 100%;
         padding: 10px;
@@ -137,9 +138,47 @@ input:checked + .slider:before {
     }
 }
 
-/* Question Section */
+/* Table Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.page-title {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.party-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.party-table th,
+.party-table td {
+    border: 1px solid var(--text-color);
+    padding: 10px;
+    text-align: center;
+}
+
+.party-table th {
+    background-color: var(--header-bg-color);
+}
+
+.party-table td a {
+    color: var(--header-link-color);
+    text-decoration: none;
+}
+
+.party-table td a:hover {
+    text-decoration: underline;
+}
+
 .question {
-    text-align: right;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -148,17 +187,16 @@ input:checked + .slider:before {
     margin-bottom: 10px;
 }
 
-/* Option Buttons */
 .options {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .option {
-    width: 110px;
+    width: 200px;
     height: 100px;
-    border-radius: 50%;
+    border-radius: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,34 +216,9 @@ input:checked + .slider:before {
     background-color: #808080;
 }
 
-/* Form Styles */
 label {
     display: block;
     margin-bottom: 5px;
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-form {
-    width: 100%;
-}
-
-/* Flexbox centering for the entire form */
-form #submit-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100px; /* Adjust as needed for spacing */
-}
-
-#submit-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px; /* Adjust as needed for spacing */
 }
 
 input[type="submit"] {
@@ -215,9 +228,54 @@ input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: block;
+    margin: 0 auto; /* This centers the button horizontally */
 }
 
-input[type="submit"]:hover {
-    background: #555;
+/* Navigation Blocks */
+.navigation-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
+.block {
+    background-color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+}
+
+.block h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.block p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.block button {
+    background-color: var(--header-bg-color);
+    color: var(--header-link-color);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.block button:hover {
+    background-color: var(--header-link-color);
+    color: var(--header-bg-color);
+}
+
+.Ons_txt {
+    width: 60%;
+    margin: 30px auto 20px; /* Adjusted margin to move it down and provide bottom margin */
+    margin-left: 40px;
+}

@@ -1,4 +1,9 @@
-<?php include 'data.php'; ?>
+<?php include 'config.php'; ?>
+
+<?php
+$stemwijzer = new Stemwijzer();
+$partijen = $stemwijzer->selectAllParties();
+?>
 
 <!DOCTYPE html>
 <html lang="nl">

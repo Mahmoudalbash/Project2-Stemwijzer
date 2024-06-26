@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $pdo = new PDO("mysql:host=localhost;dbname=game_store", "root", "");
+    $pdo = new PDO("mysql:host=localhost;dbname=stemwijzer", "root", "");
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
     $stmt->execute([$username]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -45,4 +45,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </body>
 </html>
-
