@@ -1,10 +1,7 @@
 <?php
-include 'data.php';
+include 'config.php';
 
-$stemwijzer = new Stemwijzer($pdo);
-$vragen = $stemwijzer->selectAll();
-
-$politieke_partijen = [
+$partijen = [
     "VVD" => ["eens", "oneens", "eens", "oneens", "oneens"],
     "PvdA" => ["oneens", "eens", "oneens", "eens", "eens"],
     "D66" => ["oneens", "eens", "oneens", "eens", "eens"],
@@ -23,10 +20,10 @@ foreach ($_POST as $key => $value) {
 }
 
 $scores = [];
-foreach ($politieke_partijen as $partij => $standpunten) {
+foreach ($partijen as $partij => $standpunten) {
     $score = 0;
-    foreach ($vragen as $index => $vraag) {
-        if (isset($antwoorden[$index]) && $antwoorden[$index] == $vraag[$standpunten[$index]]) {
+    foreach ($standpunten as $index => $standpunt) {
+        if ($antwoorden[$index] == $standpunt) {
             $score++;
         }
     }
@@ -37,13 +34,14 @@ arsort($scores);
 $beste_partij = key($scores);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultaat</title>
-    <link rel="stylesheet" href="crud.css">
+    <link rel="stylesheet" href="styles_c.css">
 </head>
 <body>
     <div class="container">
@@ -53,3 +51,5 @@ $beste_partij = key($scores);
     </div>
 </body>
 </html>
+
+

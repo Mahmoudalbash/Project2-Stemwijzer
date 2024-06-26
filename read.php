@@ -2,7 +2,7 @@
 include 'data.php';
 
 $stemwijzer = new Stemwijzer($pdo);
-$vragen = $stemwijzer->selectAll();
+$vragen = $stemwijzer->getAllVragenMetPartijen();
 ?>
 <!DOCTYPE html>
 <html lang="nl">

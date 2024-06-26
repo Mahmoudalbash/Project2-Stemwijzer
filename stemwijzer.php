@@ -1,7 +1,7 @@
 <?php
-include 'data.php';
+include 'config.php';
 
-$stemwijzer = new Stemwijzer($pdo);  // Pass the PDO instance to the Stemwijzer constructor
+$stemwijzer = new Stemwijzer();
 $vragen = $stemwijzer->selectAll();
 ?>
 
@@ -12,12 +12,7 @@ $vragen = $stemwijzer->selectAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stemwijzer</title>
     <link rel="stylesheet" href="styles_c.css">
-    <script defer src="script.js"></script>
 </head>
-<body>
-<div class="top-banner">
-        <img src="images/logo-met-text-rechts.svg" alt="Logo met text rechts" class="logo-left">
-    </div>
 <header>
         <nav>
             <a href="Start.html">Start</a>
@@ -33,50 +28,48 @@ $vragen = $stemwijzer->selectAll();
             </label>
         </nav>
     </header>
+
+
+
+<body>
     <div class="container">
         <h1>Stelling</h1>
         <form action="result.php" method="post" id="stemwijzer-form">
             <?php foreach ($vragen as $index => $row) { ?>
                 <div class="question" id="question_<?php echo $index; ?>" style="display: <?php echo $index === 0 ? 'block' : 'none'; ?>;">
-        <p><?php echo $row["vraag"]; ?></p>
-        <div class="options">
-            <label class="option eens">
-                <input type="radio" name="vraag_<?php echo $row["id"]; ?>" value="eens" onclick="showNextQuestion(<?php echo $index; ?>)"> Eens
-            </label>
-            <label class="option oneens">
-                <input type="radio" name="vraag_<?php echo $row["id"]; ?>" value="oneens" onclick="showNextQuestion(<?php echo $index; ?>)"> Oneens
-            </label>
-            <label class="option weetniet">
-                <input type="radio" name="vraag_<?php echo $row["id"]; ?>" value="weet niet" onclick="showNextQuestion(<?php echo $index; ?>)"> Weet ik niet
-            </label>
-        </div>
-    </div>
+                    <p><?php echo $row["vraag"]; ?></p>
+                    <div class="options">
+                        <label class="option eens">
+                            <input type="radio" name="vraag_<?php echo $row["id"]; ?>" value="eens" onclick="showNextQuestion(<?php echo $index; ?>)"> Eens
+                        </label>
+                        <label class="option oneens">
+                            <input type="radio" name="vraag_<?php echo $row["id"]; ?>" value="oneens" onclick="showNextQuestion(<?php echo $index; ?>)"> Oneens
+                        </label>
+                        <label class="option weetniet">
+                            <input type="radio" name="vraag_<?php echo $row["id"]; ?>" value="weet niet" onclick="showNextQuestion(<?php echo $index; ?>)"> Weet ik niet
+                        </label>
+                    </div>
+                </div>
             <?php } ?>
             <div id="submit-section" style="display: none;">
-                <input type="submit" value="Verstuur" class="Submit_form">
+                <input type="submit" value="Verstuur">
             </div>
-
         </form>
     </div>
 
     <script>
         function showNextQuestion(currentIndex) {
-    console.log('Current Index:', currentIndex);
-
-    const currentQuestion = document.getElementById('question_' + currentIndex);
-    console.log('Current Question:', currentQuestion);
-
-    const nextQuestion = document.getElementById('question_' + (currentIndex + 1));
-    console.log('Next Question:', nextQuestion);
-
-    if (nextQuestion) {
-        currentQuestion.style.display = 'none';
-        nextQuestion.style.display = 'block';
-    } else {
-        currentQuestion.style.display = 'none';
-        document.getElementById('submit-section').style.display = 'block';
-    }
-}
+            const currentQuestion = document.getElementById('question_' + currentIndex);
+            const nextQuestion = document.getElementById('question_' + (currentIndex + 1));
+            
+            if (nextQuestion) {
+                currentQuestion.style.display = 'none';
+                nextQuestion.style.display = 'block';
+            } else {
+                currentQuestion.style.display = 'none';
+                document.getElementById('submit-section').style.display = 'block';
+            }
+        }
     </script>
 </body>
 </html>

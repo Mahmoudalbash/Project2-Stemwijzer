@@ -9,7 +9,7 @@ if (!isset($_GET['id'])) {
 }
 
 $id = $_GET['id'];
-$stemwijzer->delete($id);
+$stemwijzer->deleteVraag($id);
 header("Location: read.php");
 exit();
 ?>
