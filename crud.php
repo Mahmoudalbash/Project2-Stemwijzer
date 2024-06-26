@@ -1,5 +1,11 @@
 <?php
 include 'config.php';
+session_start();
+// Controleer of de gebruiker is ingelogd; zo niet, stuur door naar het inlogscherm
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
 
 $stemwijzer = new Stemwijzer();
 
@@ -25,6 +31,7 @@ $partijen = $stemwijzer->selectAllPartijen();
 <body>
     <div class="container">
         <h1>Partijen Beheren</h1>
+        <a href="logout.php">Uitloggen</a>
         
         <!-- Voeg nieuwe partij toe -->
         <form method="post" action="">
@@ -54,7 +61,9 @@ $partijen = $stemwijzer->selectAllPartijen();
                 </tr>
             <?php } ?>
         </table>
+        
     </div>
+   
 </body>
 </html>
 
