@@ -17,6 +17,11 @@ class Stemwijzer
         }
     }
 
+    public function getPdo()
+    {
+        return $this->pdo;
+    }
+
     public function selectAll()
     {
         $stmt = $this->pdo->prepare("SELECT * FROM vragen;");
@@ -62,11 +67,11 @@ class Stemwijzer
         $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
-    public function selectAllParties() {
+
+    public function selectAllParties()
+    {
         $stmt = $this->pdo->query('SELECT * FROM partijen');
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
-
-
 ?>

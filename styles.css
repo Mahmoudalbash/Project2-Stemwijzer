@@ -279,3 +279,13 @@ input[type="submit"] {
     margin: 30px auto 20px; /* Adjusted margin to move it down and provide bottom margin */
     margin-left: 40px;
 }
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}
