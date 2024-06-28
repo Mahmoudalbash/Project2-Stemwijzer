@@ -19,7 +19,7 @@
             <a href="Over_partijen.php">Over de partijen</a>
             <a href="Over_ons.html">Over ons</a>
             <a href="Opties.html">Opties</a>
-            <a href="Account.html">Account</a>
+            <a href="Account.php">Account</a>
             <label class="switch">
                 <input type="checkbox" id="theme-toggle">
                 <span class="slider round"></span>
