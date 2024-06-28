@@ -60,7 +60,7 @@
                 <input type="password" id="reg-password" name="password" required>
                 
                 <label for="reg-email">E-mail:</label>
-                <input type="email" id="reg-email" name="email" required>
+                <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Voer een geldig e-mailadres in, inclusief .com, .net, enz.">
                 
                 <button type="submit">Registreren</button>
             </form>
